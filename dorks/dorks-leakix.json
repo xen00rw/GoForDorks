@@ -1,0 +1,18 @@
+{
+    "dork1": {
+        "description": "Default Search",
+        "query": "example.com"
+    },
+    "dork2": {
+        "description": "SSL Common Name",
+        "query": "ssl.certificate.cn:*.example.com"
+    },
+    "dork3": {
+        "description": "SSL Certificate Domain",
+        "query": "ssl.certificate.domain:*.example.com"
+    },
+    "dork4": {
+        "description": "Host limited search",
+        "query": "host:example.com"
+    }
+}

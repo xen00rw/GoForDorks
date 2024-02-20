@@ -1,0 +1,58 @@
+{
+    "dork1": {
+        "description": "Directory Listing",
+        "query": "site:example.com intitle:'Index of /'"
+    },
+    "dork2": {
+        "description": "Login Pages",
+        "query": "site:example.com inurl:admin OR inurl:login OR inurl:adminlogin OR inurl:cplogin OR inurl:weblogin  OR inurl:wp-admin OR inurl:wp-login OR inurl:portal  OR inurl:loginpanel OR inurl:memberlogin  OR inurl:dashboard OR inurl:auth OR inurl:ForgotPassword OR inurl:.git OR inurl:signup"
+    },
+    "dork3": {
+        "description": "WordPress Files",
+        "query": "site:example.com inurl:wp-content | inurl:wp-includes"
+    },
+    "dork4": {
+        "description": "Juicy Extensions",
+        "query": "site:example.com ext:log | ext:csv | ext:ppt | ext:pptx | ext: | ext:txt | ext:conf | ext:cfg | ext:xml | ext:cnf | ext:ini | ext:env | ext:sh | ext:bak | ext:backup | ext:swp | ext:old | ext:~ | ext:git | ext:svn | ext:htpasswd | ext:htaccess"
+    },
+    "dork5": {
+        "description": "SQLi/SSRF/LFI/RCE Prone Parameters",
+        "query": "inurl:id= | inurl:pid= | inurl:category= | inurl:cat= | inurl:action= | inurl:sid= | inurl:dir= | inurl:http | inurl:url= | inurl:path= | inurl:dest= | inurl:html= | inurl:data= | inurl:domain=  | inurl:page= | inurl:include | inurl:dir | inurl:detail= | inurl:file= | inurl:folder= | inurl:inc= | inurl:locate= | inurl:doc= | inurl:conf= | inurl:cmd | inurl:exec= | inurl:query= | inurl:code= | inurl:do= | inurl:run= | inurl:read=  | inurl:ping= inurl:& site:example.com"
+    },
+    "dork6": {
+        "description": "API Docs",
+        "query": "inurl:apidocs | inurl:api-docs | inurl:swagger | inurl:api-explorer site:example.com"
+    },
+    "dork7": {
+        "description": "Code/Information Leaks",
+        "query": "\"example.com\" site:pastebin.com OR site:jsfiddle.net OR site:codebeautify.org OR site:codepen.io OR site:jfrog.io OR site:sharecode.io OR site:codeshare.io OR site:trello.com OR site:coggle.it OR site:libraries.io OR site:npm.runkit.com OR site:scribd.com OR site:stackoverflow.com OR site:justpaste.it OR site:heypasteit.com OR site:controlc.com OR site:codepad.co OR site:ideone.com OR site:repl.it OR site:jsdelivr.com"
+    },
+    "dork8": {
+        "description": "Cloud Storage (Amazon)",
+        "query": "\"example.com\" site:s3.amazonaws.com OR site:s3-external-1.amazonaws.com OR site:s3.dualstack.us-east-1.amazonaws.com"
+    },
+    "dork9": {
+        "description": "Cloud Storage (Microsoft)",
+        "query": "\"example.com\" site:blob.core.windows.net OR site:dev.azure.com OR site:sharepoint.com OR site:onedrive.live.com"
+    },
+    "dork10": {
+        "description": "Cloud Storage (Google)",
+        "query": "\"example.com\" site:googleapis.com OR site:drive.google.com OR site:docs.google.com inurl:\"/d/\" OR site:firebaseio.com OR site:storage.googleapis.com"
+    },
+    "dork11": {
+        "description": "Cloud Storage (Random)",
+        "query": "\"example.com\" site:digitaloceanspaces.com OR site:dropbox.com/s OR site:box.com/s"
+    },
+    "dork12": {
+        "description": "File upload sections",
+        "query": "site:example.com \"selecionar arquivo\" OR \"choose file\" OR \"upload\""
+    },
+    "dork13": {
+        "description": "Possible internal information exposure",
+        "query": "site:example.com intext:\"CONFIDENTIAL\" OR intext:\"INTERNAL\" OR intext:\"RESTRICTED\""
+    },
+    "dork14": {
+        "description": "Application Errors (PHP/SQL)",
+        "query": "site:example.com intext:\"PHP Parse error\" OR intext:\"PHP Warning\" OR intext:\"PHP Error\" OR intext:\"sql syntax near\" OR intext:\"syntax error has occurred\" OR intext:\"incorrect syntax near\" OR intext:\"unexpected end of SQL command\" OR intext:\"Warning: mysql_connect()\" OR intext:\"Warning: mysql_query()\" OR intext:\"Warning: pg_connect()\""
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "dork1": {
+        "description": "Directory Listing",
+        "query": "site:example.com intitle:'Index of /'"
+    },
+    "dork2": {
+        "description": "Login Pages",
+        "query": "site:example.com inurl:admin OR site:example.com inurl:login OR site:example.com inurl:adminlogin OR site:example.com inurl:cplogin OR site:example.com inurl:weblogin OR site:example.com inurl:wp-admin OR site:example.com inurl:wp-login OR site:example.com inurl:portal OR site:example.com inurl:memberlogin OR site:example.com inurl:dashboard OR site:example.com inurl:auth OR site:example.com inurl:ForgotPassword OR site:example.com inurl:signup"
+    },
+    "dork3": {
+        "description": "WordPress Files",
+        "query": "site:example.com inurl:wp-content OR site:example.com inurl:wp-includes"
+    },
+    "dork4": {
+        "description": "Juicy Extensions",
+        "query": "site:example.com filetype:pdf OR site:example.com filetype:doc OR site:example.com filetype:docx OR site:example.com filetype:xls OR site:example.com filetype:xlsx OR site:example.com filetype:ppt OR site:example.com filetype:pptx"
+    },
+    "dork5": {
+        "description": "API Docs",
+        "query": "site:example.com inurl:apidocs OR site:example.com inurl:api-docs OR site:example.com inurl:swagger OR site:example.com inurl:api-explorer"
+    },
+    "dork6": {
+        "description": "Cloud Storage (Amazon)",
+        "query": "example.com site:s3.amazonaws.com OR example.com site:s3-external-1.amazonaws.com OR example.com site:s3.dualstack.us-east-1.amazonaws.com"
+    },
+    "dork7": {
+        "description": "Cloud Storage (Microsoft)",
+        "query": "example.com site:blob.core.windows.net OR example.com site:dev.azure.com OR example.com site:sharepoint.com OR example.com site:onedrive.live.com"
+    },
+    "dork8": {
+        "description": "Cloud Storage (Google)",
+        "query": "example.com site:googleapis.com OR example.com site:drive.google.com OR example.com site:docs.google.com inurl:\"/d/\" OR site:firebaseio.com OR example.com site:storage.googleapis.com"
+    },
+    "dork9": {
+        "description": "Cloud Storage (Random)",
+        "query": "example.com site:digitaloceanspaces.com OR example.com site:dropbox.com/s OR example.com site:box.com/s"
+    },
+    "dork12": {
+        "description": "File upload sections",
+        "query": "site:example.com \"selecionar arquivo\" OR site:example.com \"choose file\" OR site:example.com \"upload\""
+    },
+    "dork10": {
+        "description": "Possible internal information exposure",
+        "query": "site:example.com intext:\"CONFIDENTIAL\" OR site:example.com intext:\"INTERNAL\" OR site:example.com intext:\"RESTRICTED\""
+    }
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Go for dorks!</title>
+    <meta property="og:title" content="Go for dorks!">
+    <meta property="og:description" content="Lets make your dorks easier!">
+    <meta property="og:url" content="https://dorks.wmxcloud.xyz">
+    <meta property="og:type" content="website">
+</head>
+
+<body>
+    <h1 style="text-align: center;">Go for dorks!</h1>
+    <div style="align-items: center; justify-content: center; display: flex;">
+        <input type="text" id="domainInput" placeholder="example.com">
+        <button id="updateDomainButton">Update Domain</button>
+    </div>
+    <br>
+    <br>
+    <div style="align-items: center; justify-content: center; display: flex;">
+        <select id="mySelect" onchange="optionChanged(this.value)" style="height: 30px; border-radius: 4px;">
+            <option valie="">Select the search engine</option>
+            <option value="google-engine">Google</option>
+            <option value="duckduckgo-engine">DuckDuckGo</option>
+            <option value="yandex-engine">Yandex</option>
+            <option value="leakix-engine">LeakIX</option>
+            <option value="bing-engine">Bing</option>
+        </select>
+    </div>
+    <br>
+    <div id="topMessage" style="display: none; color: red; text-align: center; margin-bottom: 20px;">
+        <p>DuckDuckGo has really bad problems with advanced search syntax! Don't trust on every result :)</p>
+        <br>
+    </div>
+    <ul id="dorkList"></ul>
+    <script>
+
+        let currentUsyntax = "";
+
+        function optionChanged(selectedValue) {
+            originalDorks = [];
+            prevTitle = "";
+            if (selectedValue !== "") {
+                if (selectedValue === "duckduckgo-engine") {
+                    topMessage.style.display = "block";
+                } else {
+                    topMessage.style.display = "none";
+                }
+                const { url, usyntax } = urlMapping[selectedValue];
+                const currentUsyntax = usyntax;
+                var element = document.getElementById("dorkList");
+                element.innerHTML = "";
+                fetchDorks(url, currentUsyntax);
+            } else {
+                console.log("No option selected.");
+            }
+        }
+
+        async function fetchDorks(url, currentUsyntax) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+
+                const dorkList = document.getElementById("dorkList");
+                dorkList.innerHTML = "";
+
+                Object.entries(data).forEach(([key, value]) => {
+                    const listItem = createDorkListItem(key, value.description, value.query, currentUsyntax);
+                    dorkList.appendChild(listItem);
+                });
+            } catch (error) {
+                console.error("Failed to fetch dorks:", error);
+            }
+        };
+
+        function createDorkListItem(dork, description, syntax, currentUsyntax) {
+            const queryHrefLinkSyntax = `${currentUsyntax}${encodeURIComponent(syntax)}`;
+            const listItem = document.createElement("li");
+
+            const dorkLinkSyntax = syntax;
+
+            if (description) {
+                const desc = document.createElement("p");
+                desc.textContent = description;
+                desc.classList.add("description");
+                listItem.appendChild(desc);
+            }
+
+            const link = document.createElement("a");
+            link.setAttribute('data-original-dork', syntax);
+            link.href = queryHrefLinkSyntax;
+            link.textContent = dorkLinkSyntax;
+            link.classList.add("dorkLink");
+            link.target = "_blank";
+
+            listItem.appendChild(link);
+
+            return listItem;
+        };
+
+        const urlMapping = {
+            "google-engine": {
+                url: "/dorks/dorks-google.json",
+                usyntax: "https://www.google.com/search?q="
+            },
+            "duckduckgo-engine": {
+                url: "/dorks/dorks-duck.json",
+                usyntax: "https://duckduckgo.com/?q="
+            },
+            "yandex-engine": {
+                url: "/dorks/dorks-yandex.json",
+                usyntax: "https://yandex.com/search/?noreask=1&text="
+            },
+            "leakix-engine": {
+                url: "/dorks/dorks-leakix.json",
+                usyntax: "https://leakix.net/search?q="
+            },
+            "bing-engine": {
+                url: "/dorks/dorks-bing.json",
+                usyntax: "https://www.bing.com/search?q="
+            }
+        };
+
+        function updateDomain() {
+            const domainInput = document.getElementById("domainInput");
+            const domains = domainInput.value.split(",").map(domain => domain.trim());
+            const searchEngineSelection = document.getElementById("mySelect").value;
+            const currentUsyntax = urlMapping[searchEngineSelection].usyntax;
+
+            const dorkLinks = document.querySelectorAll(".dorkLink");
+            dorkLinks.forEach(link => {
+                const originalDork = link.getAttribute('data-original-dork');
+                let updatedDork = originalDork;
+                domains.forEach(domain => {
+                    updatedDork = updatedDork.replace(/example\.com/g, domain);
+                });
+
+                link.href = `${currentUsyntax}${encodeURIComponent(updatedDork)}`;
+                link.textContent = updatedDork;
+            });
+        }
+
+        const updateDomainButton = document.getElementById("updateDomainButton");
+        updateDomainButton.addEventListener("click", updateDomain);
+
+        fetchDorks();
+    </script>
+    <br><hr>
+    <div>
+	<div style="font-size: 15px;">With love, Xen00rw ♥</a></div>
+    </div>
+</body>
+
+</html>

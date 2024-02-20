@@ -1,0 +1,46 @@
+{
+    "dork1": {
+        "description": "Login Pages",
+        "query": "site:example.com (inbody:admin OR inbody:login OR inbody:portal OR inbody:memberlogin OR inbody:dashboard OR inbody:auth OR inbody:ForgotPassword OR inbody:signup)"
+    },
+    "dork2": {
+        "description": "By File Types",
+        "query": "site:example.com (filetype:log OR filetype:csv OR filetype:ppt OR filetype:xlsx OR filetype:xls OR filetype:pptx OR filetype:txt OR filetype:docx OR filetype:doc OR filetype:cfg OR filetype:xml OR filetype:env OR filetype:sh OR filetype:bak OR filetype:backup OR filetype:old OR filetype:git OR filetype:svn)"
+    },
+    "dork3": {
+        "description": "By Extension type",
+        "query": "site:example.com (ext:log OR ext:csv OR ext:ppt OR ext:xlsx OR ext:xls OR ext:pptx OR ext:txt OR ext:docx OR ext:doc OR ext:cfg OR ext:xml OR ext:env OR ext:sh OR ext:bak OR ext:backup OR ext:old OR ext:git OR ext:svn)"
+    },
+    "dork4": {
+        "description": "API Docs",
+        "query": "site:example.com (inanchor:apidocs OR inanchor:api-docs OR inanchor:swagger OR inanchor:api-explorer)"
+    },
+    "dork5": {
+        "description": "Code/Information Leaks",
+        "query": "\"example.com\" (site:pastebin.com OR site:jsfiddle.net OR site:codebeautify.org OR site:codepen.io OR site:jfrog.io OR site:sharecode.io OR site:codeshare.io OR site:trello.com OR site:coggle.it OR site:libraries.io OR site:npm.runkit.com OR site:scribd.com OR site:stackoverflow.com OR site:justpaste.it OR site:heypasteit.com OR site:controlc.com OR site:codepad.co OR site:ideone.com OR site:repl.it OR site:jsdelivr.com)"
+    },
+    "dork6": {
+        "description": "Cloud Storage (Amazon)",
+        "query": "\"example.com\" (site:s3.amazonaws.com OR site:s3-external-1.amazonaws.com OR site:s3.dualstack.us-east-1.amazonaws.com)"
+    },
+    "dork7": {
+        "description": "Cloud Storage (Microsoft)",
+        "query": "\"example.com\" (site:blob.core.windows.net OR site:dev.azure.com OR site:sharepoint.com OR site:onedrive.live.com)"
+    },
+    "dork8": {
+        "description": "Cloud Storage (Google)",
+        "query": "\"example.com\" (site:googleapis.com OR site:drive.google.com OR site:docs.google.com OR site:firebaseio.com OR site:storage.googleapis.com)"
+    },
+    "dork9": {
+        "description": "Cloud Storage (Random)",
+        "query": "\"example.com\" (site:digitaloceanspaces.com OR site:dropbox.com/s OR site:box.com/s)"
+    },
+    "dork10": {
+        "description": "File upload sections",
+        "query": "site:example.com (\"selecionar arquivo\" OR \"choose file\" OR \"upload\")"
+    },
+    "dork11": {
+        "description": "Possible internal information exposure",
+        "query": "site:example.com +\"CONFIDENTIAL\" +\"INTERNAL\" +\"RESTRICTED\")"
+    }
+}
