@@ -1,57 +1,61 @@
 {
-    "dork1": {
+    "dork-dirlisting": {
         "description": "Directory Listing",
         "query": "site:example.com title:'Index of /'"
     },
-    "dork2": {
+    "dork-login": {
         "description": "Login Pages",
         "query": "site:example.com inurl:admin | inurl:login | inurl:adminlogin | inurl:cplogin | inurl:weblogin  | inurl:wp-admin | inurl:wp-login | inurl:portal  | inurl:loginpanel | inurl:memberlogin  | inurl:dashboard | inurl:auth | inurl:ForgotPassword | inurl:.git | inurl:signup"
     },
-    "dork3": {
+    "dork-registration": {
+        "description": "Signup Pages",
+        "query": "site:example.com intext:\"signup\" | intext:\"Create Account\" | intext:\"Create an account\" | intext:\"Criar conta\" | intext:\"cadastrar conta\""
+    },
+    "dork-wordpress": {
         "description": "WordPress Files",
         "query": "site:example.com inurl:wp-content | inurl:wp-includes"
     },
-    "dork4": {
+    "dork-filetype": {
         "description": "Mime Type based files (Yandex Limitation)",
         "query": "site:example.com mime:PDF | mime:XLS | mime:ODS | mime:RTF | mime:PPT | mime:ODP | mime:SWF | mime:ODT | mime:ODG | mime:DOC"
     },
-    "dork5": {
+    "dork-parameters": {
         "description": "SQLi/SSRF/LFI/RCE Prone Parameters",
         "query": " site:example.com inurl:id= | inurl:pid= | inurl:category= | inurl:cat= | inurl:action= | inurl:sid= | inurl:dir= | inurl:http | inurl:url= | inurl:path= | inurl:dest= | inurl:html= | inurl:data= | inurl:domain=  | inurl:page= | inurl:include | inurl:dir | inurl:detail= | inurl:file= | inurl:folder= | inurl:inc= | inurl:locate= | inurl:doc= | inurl:conf= | inurl:cmd | inurl:exec= | inurl:query= | inurl:code= | inurl:do= | inurl:run= | inurl:read=  | inurl:ping= inurl:&"
     },
-    "dork6": {
+    "dork-apidocs": {
         "description": "API Docs",
         "query": "site:example.com inurl:apidocs | inurl:api-docs | inurl:swagger | inurl:api-explorer"
     },
-    "dork7": {
+    "dork-infoleakage": {
         "description": "Code/Information Leaks",
         "query": "\"example.com\" site:pastebin.com | site:jsfiddle.net | site:codebeautify.org | site:codepen.io | site:jfrog.io | site:sharecode.io | site:codeshare.io | site:trello.com | site:coggle.it | site:libraries.io | site:npm.runkit.com | site:scribd.com | site:stackoverflow.com | site:justpaste.it | site:heypasteit.com | site:controlc.com | site:codepad.co | site:ideone.com | site:repl.it | site:jsdelivr.com"
     },
-    "dork8": {
+    "dork-cloud-amazon": {
         "description": "Cloud Storage (Amazon)",
         "query": "\"example.com\" site:s3.amazonaws.com | site:s3-external-1.amazonaws.com | site:s3.dualstack.us-east-1.amazonaws.com"
     },
-    "dork9": {
+    "dork-cloud-microsoft": {
         "description": "Cloud Storage (Microsoft)",
         "query": "\"example.com\" site:blob.core.windows.net | site:dev.azure.com | site:sharepoint.com | site:onedrive.live.com"
     },
-    "dork10": {
+    "dork-cloud-google": {
         "description": "Cloud Storage (Google)",
         "query": "\"example.com\" site:googleapis.com | site:drive.google.com | site:docs.google.com inurl:\"/d/\" | site:firebaseio.com | site:storage.googleapis.com"
     },
-    "dork11": {
+    "dork-cloud-generic": {
         "description": "Cloud Storage (Random)",
         "query": "\"example.com\" site:digitaloceanspaces.com | site:dropbox.com/s | site:box.com/s"
     },
-    "dork12": {
+    "dork-fileupload": {
         "description": "File upload sections",
         "query": "site:example.com \"selecionar arquivo\" | \"choose file\" | \"upload\""
     },
-    "dork13": {
+    "dork-internalinfo": {
         "description": "Possible internal information exposure",
         "query": "site:example.com intext:\"CONFIDENTIAL\" OR intext:\"INTERNAL\" OR intext:\"RESTRICTED\""
     },
-    "dork14": {
+    "dork-app-errors": {
         "description": "Application Errors (PHP/SQL)",
         "query": "site:example.com intext:\"PHP Parse error\" | intext:\"PHP Warning\" | intext:\"PHP Error\" | intext:\"sql syntax near\" | intext:\"syntax error has occurred\" | intext:\"incorrect syntax near\" | intext:\"unexpected end of SQL command\" | intext:\"Warning: mysql_connect()\" | intext:\"Warning: mysql_query()\" | intext:\"Warning: pg_connect()\""
     }
