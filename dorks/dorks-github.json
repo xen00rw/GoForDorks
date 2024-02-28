@@ -1,0 +1,14 @@
+{
+    "dork-fullscope": {
+        "description": "Full Scope",
+        "query": "\"example.com\""
+    },
+    "dork-scope-strings": {
+        "description": "Scope plus strings",
+        "query": "\"example.com\" AND /secret|url|apikey|api_key|accesstoken|access_token|bucket|api/"
+    },
+    "dork-emails": {
+        "description": "Search e-mails for domain",
+        "query": "\"@example.com\""
+    }
+}

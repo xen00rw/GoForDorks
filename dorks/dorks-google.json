@@ -8,7 +8,7 @@
         "query": "site:example.com inurl:admin OR inurl:login OR inurl:adminlogin OR inurl:cplogin OR inurl:weblogin  OR inurl:wp-admin OR inurl:wp-login OR inurl:portal  OR inurl:loginpanel OR inurl:memberlogin  OR inurl:dashboard OR inurl:auth OR inurl:ForgotPassword OR inurl:.git OR inurl:signup"
     },
     "dork-registration": {
-        "description": "Registration Pages",
+        "description": "Signup Pages",
         "query": "site:example.com intext:\"signup\" OR intext:\"Create Account\" OR intext:\"Create an account\" OR intext:\"Criar conta\" OR intext:\"cadastrar conta\""
     },
     "dork-wordpress": {

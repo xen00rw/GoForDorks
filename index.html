@@ -11,6 +11,7 @@
     <meta property="og:description" content="Lets make your dorks easier!">
     <meta property="og:url" content="https://dorks.wmxcloud.xyz">
     <meta property="og:type" content="website">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
 </head>
 
 <body>
@@ -29,11 +30,16 @@
             <option value="yandex-engine">Yandex</option>
             <option value="leakix-engine">LeakIX</option>
             <option value="bing-engine">Bing</option>
+            <option value="github-engine">Github</option>
         </select>
     </div>
     <br>
-    <div id="topMessage" style="display: none; color: red; text-align: center; margin-bottom: 20px;">
+    <div id="topMessageDuckDuckGo" style="display: none; color: red; text-align: center; margin-bottom: 20px;">
         <p>DuckDuckGo has really bad problems with advanced search syntax! Don't trust on every result :)</p>
+        <br>
+    </div>
+    <div id="topMessageGithub" style="display: none; color: red; text-align: center; margin-bottom: 20px;">
+        <p>In Github searchs, you should be logged :)</p>
         <br>
     </div>
     <ul id="dorkList"></ul>
@@ -46,9 +52,14 @@
             prevTitle = "";
             if (selectedValue !== "") {
                 if (selectedValue === "duckduckgo-engine") {
-                    topMessage.style.display = "block";
+                    topMessageDuckDuckGo.style.display = "block";
                 } else {
-                    topMessage.style.display = "none";
+                    topMessageDuckDuckGo.style.display = "none";
+                }
+                if (selectedValue === "github-engine") {
+                    topMessageGithub.style.display = "block";
+                } else {
+                    topMessageGithub.style.display = "none";
                 }
                 const { url, usyntax } = urlMapping[selectedValue];
                 const currentUsyntax = usyntax;
@@ -125,6 +136,10 @@
             "bing-engine": {
                 url: "/dorks/dorks-bing.json",
                 usyntax: "https://www.bing.com/search?q="
+            },
+            "github-engine": {
+                url: "/dorks/dorks-github.json",
+                usyntax: "https://github.com/search?q="
             }
         };
 
