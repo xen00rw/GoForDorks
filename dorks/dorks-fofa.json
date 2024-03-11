@@ -1,0 +1,10 @@
+{
+    "dork-full": {
+        "description": "Default Search",
+        "query": "\"example.com\""
+    },
+    "dork-nowaf": {
+        "description": "No WAF Search",
+        "query": "\"example.com\" && org!=\"INCAPSULA\" && org!=\"CLOUDFLARENET\""
+    }
+}

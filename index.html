@@ -31,6 +31,7 @@
             <option value="leakix-engine">LeakIX</option>
             <option value="bing-engine">Bing</option>
             <option value="github-engine">Github</option>
+            <option value="fofa-engine">Fofa Info</option>
         </select>
     </div>
     <br>
@@ -39,7 +40,11 @@
         <br>
     </div>
     <div id="topMessageGithub" style="display: none; color: red; text-align: center; margin-bottom: 20px;">
-        <p>In Github searchs, you should be logged :)</p>
+        <p>In Github searches, you should be logged :)</p>
+        <br>
+    </div>
+    <div id="topMessageFofa" style="display: none; color: red; text-align: center; margin-bottom: 20px;">
+        <p>In Fofa Info searches, you should be logged to see more than 1 page :)</p>
         <br>
     </div>
     <ul id="dorkList"></ul>
@@ -60,6 +65,11 @@
                     topMessageGithub.style.display = "block";
                 } else {
                     topMessageGithub.style.display = "none";
+                }
+                if (selectedValue === "fofa-engine") {
+                    topMessageFofa.style.display = "block";
+                } else {
+                    topMessageFofa.style.display = "none";
                 }
                 const { url, usyntax } = urlMapping[selectedValue];
                 const currentUsyntax = usyntax;
@@ -140,7 +150,12 @@
             "github-engine": {
                 url: "/dorks/dorks-github.json",
                 usyntax: "https://github.com/search?q="
+            },
+            "fofa-engine": {
+                url: "/dorks/dorks-fofa.json",
+                usyntax: "https://en.fofa.info/result?qbase64="
             }
+            
         };
 
         function updateDomain() {
@@ -157,7 +172,13 @@
                     updatedDork = updatedDork.replace(/example\.com/g, domain);
                 });
 
-                link.href = `${currentUsyntax}${encodeURIComponent(updatedDork)}`;
+                if (currentUsyntax.includes('fofa')) {
+                    const eupdatedDork = btoa(updatedDork);
+                    console.log(eupdatedDork);
+                    link.href = `${currentUsyntax}${encodeURIComponent(eupdatedDork)}`;
+                } else {
+                    link.href = `${currentUsyntax}${encodeURIComponent(updatedDork)}`;
+                }
                 link.textContent = updatedDork;
             });
         }

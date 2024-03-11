@@ -5,5 +5,10 @@ Easier way to use advanced search syntax on common search engines like Google, Y
 ## Supported search Engines
 
 > Google<br>
+> DuckDuckGo<br>
 > Yandex<br>
-> DuckDuckGo (In development..)<br>
+> LeakIX<br>
+> Bing<br>
+> Github<br>
+> Fofa Info<br>
+> More to come..<br>
