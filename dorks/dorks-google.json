@@ -58,5 +58,37 @@
     "dork-app-errors": {
         "description": "Application Errors (PHP/SQL)",
         "query": "site:example.com intext:\"PHP Parse error\" OR intext:\"PHP Warning\" OR intext:\"PHP Error\" OR intext:\"sql syntax near\" OR intext:\"syntax error has occurred\" OR intext:\"incorrect syntax near\" OR intext:\"unexpected end of SQL command\" OR intext:\"Warning: mysql_connect()\" OR intext:\"Warning: mysql_query()\" OR intext:\"Warning: pg_connect()\""
+    },
+    "dork-ips1": {
+        "description": "Search with IP Addresses",
+        "query": "\"example.com\" (site:*.*.0.* | site:*.*.1.* | site:*.*.10.* | site:*.*.100.* | site:*.*.101.* | site:*.*.102.* | site:*.*.103.* | site:*.*.104.* | site:*.*.105.* | site:*.*.106.* | site:*.*.107.* | site:*.*.108.* | site:*.*.109.* | site:*.*.11.* | site:*.*.110.* | site:*.*.111.* | site:*.*.112.* | site:*.*.113.* | site:*.*.114.* | site:*.*.115.* | site:*.*.116.* | site:*.*.117.* | site:*.*.118.* | site:*.*.119.* | site:*.*.12.* | site:*.*.120.* | site:*.*.121.* | site:*.*.122.* | site:*.*.123.* | site:*.*.124.* | site:*.*.125.* | site:*.*.126.* | site:*.*.127.* | site:*.*.128.* | site:*.*.129.*)"
+    },
+    "dork-ips2": {
+        "description": "Search with IP Addresses 2",
+        "query": "\"example.com\" (site:*.*.13.* | site:*.*.130.* | site:*.*.131.* | site:*.*.132.* | site:*.*.133.* | site:*.*.134.* | site:*.*.135.* | site:*.*.136.* | site:*.*.137.* | site:*.*.138.* | site:*.*.139.* | site:*.*.14.* | site:*.*.140.* | site:*.*.141.* | site:*.*.142.* | site:*.*.143.* | site:*.*.144.* | site:*.*.145.* | site:*.*.146.* | site:*.*.147.* | site:*.*.148.* | site:*.*.149.* | site:*.*.15.* | site:*.*.150.* | site:*.*.151.* | site:*.*.152.* | site:*.*.153.* | site:*.*.154.* | site:*.*.155.* | site:*.*.156.* | site:*.*.157.* | site:*.*.158.* | site:*.*.159.* | site:*.*.16.* | site:*.*.160.*)"
+    },
+    "dork-ips3": {
+        "description": "Search with IP Addresses 3",
+        "query": "\"example.com\" (site:*.*.161.* | site:*.*.162.* | site:*.*.163.* | site:*.*.164.* | site:*.*.165.* | site:*.*.166.* | site:*.*.167.* | site:*.*.168.* | site:*.*.169.* | site:*.*.17.* | site:*.*.170.* | site:*.*.171.* | site:*.*.172.* | site:*.*.173.* | site:*.*.174.* | site:*.*.175.* | site:*.*.176.* | site:*.*.177.* | site:*.*.178.* | site:*.*.179.* | site:*.*.18.* | site:*.*.180.* | site:*.*.181.* | site:*.*.182.* | site:*.*.183.* | site:*.*.184.* | site:*.*.185.* | site:*.*.186.* | site:*.*.187.* | site:*.*.188.* | site:*.*.189.* | site:*.*.19.* | site:*.*.190.* | site:*.*.191.* | site:*.*.192.*)"
+    },
+    "dork-ips4": {
+        "description": "Search with IP Addresses 4",
+        "query": "\"example.com\" (site:*.*.193.* | site:*.*.194.* | site:*.*.195.* | site:*.*.196.* | site:*.*.197.* | site:*.*.198.* | site:*.*.199.* | site:*.*.2.* | site:*.*.20.* | site:*.*.20.* | site:*.*.200.* | site:*.*.201.* | site:*.*.202.* | site:*.*.203.* | site:*.*.204.* | site:*.*.205.* | site:*.*.206.* | site:*.*.207.* | site:*.*.208.* | site:*.*.209.* | site:*.*.21.* | site:*.*.210.* | site:*.*.211.* | site:*.*.212.* | site:*.*.213.* | site:*.*.214.* | site:*.*.215.* | site:*.*.216.* | site:*.*.217.* | site:*.*.218.* | site:*.*.219.* | site:*.*.22.* | site:*.*.220.* | site:*.*.221.* | site:*.*.222.*)"
+    },
+    "dork-ips5": {
+        "description": "Search with IP Addresses 5",
+        "query": "\"example.com\" (site:*.*.223.* | site:*.*.224.* | site:*.*.225.* | site:*.*.226.* | site:*.*.227.* | site:*.*.228.* | site:*.*.229.* | site:*.*.23.* | site:*.*.230.* | site:*.*.231.* | site:*.*.232.* | site:*.*.233.* | site:*.*.234.* | site:*.*.235.* | site:*.*.236.* | site:*.*.237.* | site:*.*.238.* | site:*.*.239.* | site:*.*.24.* | site:*.*.240.* | site:*.*.241.* | site:*.*.242.* | site:*.*.243.* | site:*.*.244.* | site:*.*.245.* | site:*.*.246.* | site:*.*.247.* | site:*.*.248.* | site:*.*.249.* | site:*.*.25.* | site:*.*.250.* | site:*.*.251.* | site:*.*.252.* | site:*.*.253.* | site:*.*.254.*)"
+    },
+    "dork-ips6": {
+        "description": "Search with IP Addresses 6",
+        "query": "\"example.com\" (site:*.*.255.* | site:*.*.26.* | site:*.*.27.* | site:*.*.28.* | site:*.*.29.* | site:*.*.3.* | site:*.*.30.* | site:*.*.31.* | site:*.*.31.* | site:*.*.32.* | site:*.*.33.* | site:*.*.34.* | site:*.*.35.* | site:*.*.36.* | site:*.*.37.* | site:*.*.38.* | site:*.*.39.* | site:*.*.4.* | site:*.*.40.* | site:*.*.41.* | site:*.*.42.* | site:*.*.43.* | site:*.*.44.* | site:*.*.45.* | site:*.*.46.* | site:*.*.47.* | site:*.*.48.* | site:*.*.49.* | site:*.*.5.* | site:*.*.50.* | site:*.*.51.* | site:*.*.51.* | site:*.*.52.* | site:*.*.53.* | site:*.*.54.*)"
+    },
+    "dork-ips7": {
+        "description": "Search with IP Addresses 7",
+        "query": "\"example.com\" (site:*.*.55.* | site:*.*.56.* | site:*.*.57.* | site:*.*.58.* | site:*.*.59.* | site:*.*.6.* | site:*.*.60.* | site:*.*.61.* | site:*.*.62.* | site:*.*.63.* | site:*.*.64.* | site:*.*.65.* | site:*.*.66.* | site:*.*.67.* | site:*.*.68.* | site:*.*.69.* | site:*.*.7.* | site:*.*.70.* | site:*.*.71.* | site:*.*.72.* | site:*.*.73.* | site:*.*.74.* | site:*.*.75.* | site:*.*.76.* | site:*.*.77.* | site:*.*.78.* | site:*.*.79.* | site:*.*.8.* | site:*.*.80.* | site:*.*.81.* | site:*.*.82.* | site:*.*.83.* | site:*.*.84.* | site:*.*.85.* | site:*.*.86.*)"
+    },
+    "dork-ips8": {
+        "description": "Search with IP Addresses 8",
+        "query": "\"example.com\" (site:*.*.87.* | site:*.*.88.* | site:*.*.89.* | site:*.*.9.* | site:*.*.90.* | site:*.*.91.* | site:*.*.92.* | site:*.*.93.* | site:*.*.94.* | site:*.*.95.* | site:*.*.96.* | site:*.*.97.* | site:*.*.98.* | site:*.*.99.*)"
     }
 }
