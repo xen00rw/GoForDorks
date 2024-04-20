@@ -55,6 +55,10 @@
         "description": "Possible internal information exposure",
         "query": "site:example.com intext:\"CONFIDENTIAL\" OR intext:\"INTERNAL\" OR intext:\"RESTRICTED\""
     },
+    "dork-adobe-aem": {
+        "description": "Some paths interesting of Adobe AEM (Adobe Experience Manager)",
+        "query": "inurl:/content/usergenerated | inurl:/content/dam | inurl:/jcr:content | inurl:/libs/granite | inurl:/etc/clientlibs | inurl:/content/geometrixx | inurl:/bin/wcm | inurl:/crx/de site:example.com"
+    },
     "dork-app-errors": {
         "description": "Application Errors (PHP/SQL)",
         "query": "site:example.com intext:\"PHP Parse error\" OR intext:\"PHP Warning\" OR intext:\"PHP Error\" OR intext:\"sql syntax near\" OR intext:\"syntax error has occurred\" OR intext:\"incorrect syntax near\" OR intext:\"unexpected end of SQL command\" OR intext:\"Warning: mysql_connect()\" OR intext:\"Warning: mysql_query()\" OR intext:\"Warning: pg_connect()\""
