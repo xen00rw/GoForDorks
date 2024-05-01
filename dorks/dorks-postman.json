@@ -1,0 +1,6 @@
+{
+    "dork-full": {
+        "description": "Default Search",
+        "query": "\"example.com\""
+    }
+}
