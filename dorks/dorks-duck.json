@@ -5,7 +5,7 @@
     },
     "dork-login": {
         "description": "Login Pages",
-        "query": "site:example.com inurl:admin OR site:example.com inurl:login OR site:example.com inurl:adminlogin OR site:example.com inurl:cplogin OR site:example.com inurl:weblogin OR site:example.com inurl:wp-admin OR site:example.com inurl:wp-login OR site:example.com inurl:portal OR site:example.com inurl:memberlogin OR site:example.com inurl:dashboard OR site:example.com inurl:auth OR site:example.com inurl:ForgotPassword OR site:example.com inurl:signup"
+        "query": "site:example.com inurl:admin OR site:example.com inurl:login OR site:example.com inurl:wp-admin OR site:example.com inurl:wp-login OR site:example.com inurl:portal OR site:example.com inurl:member OR site:example.com inurl:dashboard OR site:example.com inurl:auth OR site:example.com inurl:ForgotPassword OR site:example.com inurl:signup"
     },
     "dork-registration": {
         "description": "Signup Pages",

@@ -19,10 +19,6 @@
         "description": "Juicy Extensions",
         "query": "site:example.com ext:log | ext:csv | ext:ppt | ext:pptx | ext: | ext:txt | ext:conf | ext:cfg | ext:xml | ext:cnf | ext:ini | ext:env | ext:sh | ext:bak | ext:backup | ext:swp | ext:old | ext:~ | ext:git | ext:svn | ext:htpasswd | ext:htaccess"
     },
-    "dork-parameters": {
-        "description": "SQLi/SSRF/LFI/RCE Prone Parameters",
-        "query": "inurl:id= | inurl:pid= | inurl:category= | inurl:cat= | inurl:action= | inurl:sid= | inurl:dir= | inurl:http | inurl:url= | inurl:path= | inurl:dest= | inurl:html= | inurl:data= | inurl:domain=  | inurl:page= | inurl:include | inurl:dir | inurl:detail= | inurl:file= | inurl:folder= | inurl:inc= | inurl:locate= | inurl:doc= | inurl:conf= | inurl:cmd | inurl:exec= | inurl:query= | inurl:code= | inurl:do= | inurl:run= | inurl:read=  | inurl:ping= inurl:& site:example.com"
-    },
     "dork-apidocs": {
         "description": "API Docs",
         "query": "inurl:apidocs | inurl:api-docs | inurl:swagger | inurl:api-explorer site:example.com"

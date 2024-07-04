@@ -19,10 +19,6 @@
         "description": "Mime Type based files (Yandex Limitation)",
         "query": "site:example.com mime:PDF | mime:XLS | mime:ODS | mime:RTF | mime:PPT | mime:ODP | mime:SWF | mime:ODT | mime:ODG | mime:DOC"
     },
-    "dork-parameters": {
-        "description": "SQLi/SSRF/LFI/RCE Prone Parameters",
-        "query": " site:example.com inurl:id= | inurl:pid= | inurl:category= | inurl:cat= | inurl:action= | inurl:sid= | inurl:dir= | inurl:http | inurl:url= | inurl:path= | inurl:dest= | inurl:html= | inurl:data= | inurl:domain=  | inurl:page= | inurl:include | inurl:dir | inurl:detail= | inurl:file= | inurl:folder= | inurl:inc= | inurl:locate= | inurl:doc= | inurl:conf= | inurl:cmd | inurl:exec= | inurl:query= | inurl:code= | inurl:do= | inurl:run= | inurl:read=  | inurl:ping= inurl:&"
-    },
     "dork-apidocs": {
         "description": "API Docs",
         "query": "site:example.com inurl:apidocs | inurl:api-docs | inurl:swagger | inurl:api-explorer"
