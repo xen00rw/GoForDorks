@@ -39,6 +39,10 @@
         "description": "Cloud Storage (Google)",
         "query": "\"example.com\" site:googleapis.com OR site:drive.google.com OR site:docs.google.com inurl:\"/d/\" OR site:firebaseio.com OR site:storage.googleapis.com"
     },
+    "dork-cloud-google2": {
+        "description": "Cloud Storage (Google)",
+        "query": "site:docs.google.com/spreadsheets intext:\"example.com\""
+    },
     "dork-cloud-generic": {
         "description": "Cloud Storage (Random)",
         "query": "\"example.com\" site:digitaloceanspaces.com OR site:dropbox.com/s OR site:box.com/s"
