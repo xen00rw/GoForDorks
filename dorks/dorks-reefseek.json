@@ -1,0 +1,6 @@
+{
+    "dork-domain": {
+        "description": "Search domain",
+        "query": "\"example.com\""
+    }
+}

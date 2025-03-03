@@ -1,0 +1,6 @@
+{
+    "dork-files": {
+        "description": "Search files",
+        "query": "\"example.com\""
+    }
+}

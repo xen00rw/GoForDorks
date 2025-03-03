@@ -1,0 +1,6 @@
+{
+    "dork-domain": {
+        "description": "Defaut Domain Search",
+        "query": "site:example.com"
+    }
+}

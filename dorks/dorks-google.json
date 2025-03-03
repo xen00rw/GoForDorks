@@ -19,6 +19,34 @@
         "description": "Juicy Extensions",
         "query": "site:example.com ext:log | ext:csv | ext:ppt | ext:pptx | ext: | ext:txt | ext:conf | ext:cfg | ext:xml | ext:cnf | ext:ini | ext:env | ext:sh | ext:bak | ext:backup | ext:swp | ext:old | ext:~ | ext:git | ext:svn | ext:htpasswd | ext:htaccess"
     },
+    "dork-otherfiles":{
+        "description": "Other Extensions Files",
+        "query": "\"example.com\" -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)"
+    },
+    "dork-compressedfiles":{
+        "description": "Compressed Files",
+        "query": "\"example.com\" +(exe|iso|dmg|tar|7z|bz2|gz|rar|zip|apk) -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)"
+    },
+    "dork-imagefiles":{
+        "description": "Image Files",
+        "query": "\"example.com\" +(jpg|png|bmp|gif|tif|tiff|psd) -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)"
+    },
+    "dork-mediafiles":{
+        "description": "Media Files",
+        "query": "\"example.com\" +(mp3|wav|ac3|ogg|flac|wma|m4a|aac|mod) -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)"
+    },
+    "dork-documentfiles":{
+        "description": "Documents",
+        "query": "\"example.com\" +(MOBI|CBZ|CBR|CBC|CHM|EPUB|FB2|LIT|LRF|ODT|PDF|PRC|PDB|PML|RB|RTF|TCR|DOC|DOCX) -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)"
+    },
+    "dork-videofiles":{
+        "description": "Video Files",
+        "query": "\"example.com\" +(mkv|mp4|avi|mov|mpg|wmv|divx|mpeg) -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)"
+    },
+    "dork-cloudffrontsites":{
+        "description": "Cloudfront Pages",
+        "query": "site:cloudfront.net \"example.com\""
+    },
     "dork-apidocs": {
         "description": "API Docs",
         "query": "inurl:apidocs | inurl:api-docs | inurl:swagger | inurl:api-explorer site:example.com"

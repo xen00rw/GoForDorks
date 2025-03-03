@@ -1,0 +1,6 @@
+{
+    "dork-domain": {
+        "description": "Search domain cert",
+        "query": "ssl.cert.subject.cn:*.example.com"
+    }
+}
