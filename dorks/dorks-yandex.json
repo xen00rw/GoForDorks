@@ -5,7 +5,7 @@
     },
     "dork-login": {
         "description": "Login Pages",
-        "query": "site:example.com inurl:admin | inurl:login | inurl:adminlogin | inurl:cplogin | inurl:weblogin  | inurl:wp-admin | inurl:wp-login | inurl:portal  | inurl:loginpanel | inurl:memberlogin  | inurl:dashboard | inurl:auth | inurl:ForgotPassword | inurl:.git | inurl:signup"
+        "query": "site:example.com (inurl:admin | inurl:login | inurl:adminlogin | inurl:cplogin | inurl:weblogin | inurl:wp-admin | inurl:wp-login | inurl:portal | inurl:loginpanel | inurl:memberlogin | inurl:dashboard | inurl:auth | inurl:ForgotPassword | inurl:.git | inurl:signup)"
     },
     "dork-registration": {
         "description": "Signup Pages",

@@ -9,7 +9,7 @@
     },
     "dork-registration": {
         "description": "Signup Pages",
-        "query": "site:example.com intext:\"signup\" OR intext:\"Create Account\" OR intext:\"Create an account\" OR intext:\"Criar conta\" OR intext:\"cadastrar conta\""
+        "query": "site:example.com (intext:\"signup\" OR intext:\"Create Account\" OR intext:\"Create a Account\" OR intext:\"Create an account\" OR intext:\"Criar conta\" OR intext:\"cadastrar conta\")"
     },
     "dork-wordpress": {
         "description": "WordPress Files",
