@@ -1,225 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="favicon.ico" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Go for dorks!</title>
-    <meta property="og:title" content="Go for dorks!">
-    <meta property="og:description" content="Lets make your dorks easier!">
-    <meta property="og:url" content="https://dorks.wmxcloud.xyz">
-    <meta property="og:type" content="website">
-    <link rel="icon" type="image/x-icon" href="favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Go for Dorks!</title>
+  <meta property="og:title" content="Go for dorks!">  
+  <meta property="og:description" content="Lets make your dorks easier!">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <h1 style="text-align: center;">Go for dorks!</h1>
-    <div style="align-items: center; justify-content: center; display: flex;">
-        <input type="text" id="domainInput" placeholder="example.com">
-        <button id="updateDomainButton">Update Domain</button>
-    </div>
+  <div class="container">
+    <h1>Go for Dorks!</h1>
+    <label for="engine">Select a engine</label>
+    <select id="engine">
+      <option value="">-- Select --</option>
+      <option value="google|https://www.google.com/search?q=">Google</option>
+      <option value="bing|https://www.bing.com/search?q=">Bing</option>
+      <option value="duckduckgo|https://duckduckgo.com/?q=">DuckDuckGo</option>
+      <option value="yandex|https://yandex.com/search/?noreask=1&text=">Yandex</option>
+      <option value="github|https://github.com/search?q=">LeakIx</option>
+      <option value="fofa|https://en.fofa.info/result?qbase64=">Fofa</option>
+      <option value="postman|https://postman.com/search?scope=public&type=all&q=">Postman</option>
+      <option value="shodan|https://www.shodan.io/search?query=">Shodan</option>
+      <option value="startpage|https://www.startpage.com/do/search?query=">Startpage</option>
+      <option value="refseek|https://www.refseek.com/documents?q=">Refseek</option>
+    </select>
+
+    <label for="domain">Domain to search</label>
+    <input type="text" id="domain" placeholder="ex: company.com">
+
+    <div class="dork-list" id="dork-list"></div>
+  </div>
+
+  <footer>
+    With love, Xen00rw ♥
     <br>
-    <br>
-    <div style="align-items: center; justify-content: center; display: flex;">
-        <select id="mySelect" onchange="optionChanged(this.value)" style="height: 30px; border-radius: 4px;">
-            <option valie="">Select the search engine</option>
-            <option value="google-engine">Google</option>
-            <option value="duckduckgo-engine">DuckDuckGo</option>
-            <option value="yandex-engine">Yandex</option>
-            <option value="leakix-engine">LeakIX</option>
-            <option value="bing-engine">Bing</option>
-            <option value="github-engine">Github</option>
-            <option value="fofa-engine">Fofa Info</option>
-            <option value="postman-engine">Postman</option>
-            <option value="filepursuit-engine">File Pursuit</option>
-            <option value="shodan-engine">Shodan</option>
-            <option value="startpage-engine">StartPage</option>
-            <option value="reefseek-engine">ReefSeek Academic Search</option>
-        </select>
-    </div>
-    <br>
-    <div id="topMessageDuckDuckGo" style="display: none; color: red; text-align: center; margin-bottom: 20px;">
-        <p>DuckDuckGo has really bad problems with advanced search syntax! Don't trust on every result :)</p>
-        <br>
-    </div>
-    <div id="topMessageGithub" style="display: none; color: red; text-align: center; margin-bottom: 20px;">
-        <p>In Github searches, you should be logged :)</p>
-        <br>
-    </div>
-    <div id="topMessageFofa" style="display: none; color: red; text-align: center; margin-bottom: 20px;">
-        <p>In Fofa Info searches, you should be logged to see more than 1 page :)</p>
-        <br>
-    </div>
-    <ul id="dorkList"></ul>
-    <script>
+    Contributors: <a href="https://github.com/phor3nsic/">phor3nsic</a>
+  </footer>
 
-        let currentUsyntax = "";
-
-        function optionChanged(selectedValue) {
-            originalDorks = [];
-            prevTitle = "";
-            if (selectedValue !== "") {
-                if (selectedValue === "duckduckgo-engine") {
-                    topMessageDuckDuckGo.style.display = "block";
-                } else {
-                    topMessageDuckDuckGo.style.display = "none";
-                }
-                if (selectedValue === "github-engine") {
-                    topMessageGithub.style.display = "block";
-                } else {
-                    topMessageGithub.style.display = "none";
-                }
-                if (selectedValue === "fofa-engine") {
-                    topMessageFofa.style.display = "block";
-                } else {
-                    topMessageFofa.style.display = "none";
-                }
-                const { url, usyntax } = urlMapping[selectedValue];
-                const currentUsyntax = usyntax;
-                var element = document.getElementById("dorkList");
-                element.innerHTML = "";
-                fetchDorks(url, currentUsyntax);
-            } else {
-                console.log("No option selected.");
-            }
-        }
-
-        async function fetchDorks(url, currentUsyntax) {
-            try {
-                const response = await fetch(url);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const data = await response.json();
-
-                const dorkList = document.getElementById("dorkList");
-                dorkList.innerHTML = "";
-
-                Object.entries(data).forEach(([key, value]) => {
-                    const listItem = createDorkListItem(key, value.description, value.query, currentUsyntax);
-                    dorkList.appendChild(listItem);
-                });
-            } catch (error) {
-                console.error("Failed to fetch dorks:", error);
-            }
-        };
-
-        function createDorkListItem(dork, description, syntax, currentUsyntax) {
-            const queryHrefLinkSyntax = `${currentUsyntax}${encodeURIComponent(syntax)}`;
-            const listItem = document.createElement("li");
-
-            const dorkLinkSyntax = syntax;
-
-            if (description) {
-                const desc = document.createElement("p");
-                desc.textContent = description;
-                desc.classList.add("description");
-                listItem.appendChild(desc);
-            }
-
-            const link = document.createElement("a");
-            link.setAttribute('data-original-dork', syntax);
-            link.href = queryHrefLinkSyntax;
-            link.textContent = dorkLinkSyntax;
-            link.classList.add("dorkLink");
-            link.target = "_blank";
-
-            listItem.appendChild(link);
-
-            return listItem;
-        };
-
-        const urlMapping = {
-            "google-engine": {
-                url: "/dorks/dorks-google.json",
-                usyntax: "https://www.google.com/search?q="
-            },
-            "duckduckgo-engine": {
-                url: "/dorks/dorks-duck.json",
-                usyntax: "https://duckduckgo.com/?q="
-            },
-            "yandex-engine": {
-                url: "/dorks/dorks-yandex.json",
-                usyntax: "https://yandex.com/search/?noreask=1&text="
-            },
-            "leakix-engine": {
-                url: "/dorks/dorks-leakix.json",
-                usyntax: "https://leakix.net/search?q="
-            },
-            "bing-engine": {
-                url: "/dorks/dorks-bing.json",
-                usyntax: "https://www.bing.com/search?q="
-            },
-            "github-engine": {
-                url: "/dorks/dorks-github.json",
-                usyntax: "https://github.com/search?q="
-            },
-            "fofa-engine": {
-                url: "/dorks/dorks-fofa.json",
-                usyntax: "https://en.fofa.info/result?qbase64="
-            },
-            "postman-engine": {
-                url: "/dorks/dorks-postman.json",
-                usyntax: "https://postman.com/search?scope=public&type=all&q="
-            },
-            "filepursuit-engine": {
-                url: "/dorks/dorks-filepursuit.json",
-                usyntax: "https://filepursuit.com/pursuit?type=all&q="
-            },
-            "shodan-engine": {
-                url: "/dorks/dorks-shodan.json",
-                usyntax: "https://www.shodan.io/search?query="
-            },
-            "startpage-engine": {
-                url: "/dorks/dorks-startpage.json",
-                usyntax: "https://www.startpage.com/do/search?query="
-            },
-            "reefseek-engine": {
-                url: "/dorks/dorks-reefseek.json",
-                usyntax: "https://www.refseek.com/documents?q="
-            }
-            
-        };
-
-        function updateDomain() {
-            const domainInput = document.getElementById("domainInput");
-            const domains = domainInput.value.split(",").map(domain => domain.trim());
-            const searchEngineSelection = document.getElementById("mySelect").value;
-            const currentUsyntax = urlMapping[searchEngineSelection].usyntax;
-
-            const dorkLinks = document.querySelectorAll(".dorkLink");
-            dorkLinks.forEach(link => {
-                const originalDork = link.getAttribute('data-original-dork');
-                let updatedDork = originalDork;
-                domains.forEach(domain => {
-                    updatedDork = updatedDork.replace(/example\.com/g, domain);
-                });
-
-                if (currentUsyntax.includes('fofa')) {
-                    const eupdatedDork = btoa(updatedDork);
-                    console.log(eupdatedDork);
-                    link.href = `${currentUsyntax}${encodeURIComponent(eupdatedDork)}`;
-                } else {
-                    link.href = `${currentUsyntax}${encodeURIComponent(updatedDork)}`;
-                }
-                link.textContent = updatedDork;
-            });
-        }
-
-        const updateDomainButton = document.getElementById("updateDomainButton");
-        updateDomainButton.addEventListener("click", updateDomain);
-
-        fetchDorks();
-    </script>
-    <br><hr>
-    <div>
-	<div style="font-size: 15px;">With love, <b><a href="https://github.com/xen00rw/">Xen00rw</a></b> ♥</div>
-    <br>
-    <div style="font-size: 16px;">Contributors: <b><a href="https://github.com/phor3nsic/"><br>phor3nsic</a></b></div>
-
-    </div>
+  <script src="app.js"></script>
 </body>
-
 </html>

@@ -1,14 +1,19 @@
 # Description
 
-Easier way to use advanced search syntax on common search engines like Google, Yandex, DuckDuckGo and more.
+Just an easier way to create dorks for interesting searches.
 
 ## Supported search Engines
 
-> Google<br>
-> DuckDuckGo<br>
-> Yandex<br>
-> LeakIX<br>
 > Bing<br>
-> Github<br>
-> Fofa Info<br>
+> DuckDuckGo<br>
+> File Pursuit<br>
+> Fofa <br>
+> Github <br>
+> Google <br>
+> LeakIX <br>
+> Postman <br>
+> RefSeek <br>
+> Shodan <br>
+> StartPage <br>
+> Yandex <br><br>
 > More to come..<br>
