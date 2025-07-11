@@ -11,9 +11,17 @@
         "description": "Signup Pages",
         "query": "site:example.com (intext:\"signup\" OR intext:\"Create Account\" OR intext:\"Create a Account\" OR intext:\"Create an account\" OR intext:\"Criar conta\" OR intext:\"cadastrar conta\")"
     },
+    "dork-apis": {
+        "description": "API Urls",
+        "query": "site:example.com (inurl:*/rest OR inurl:*/v1 OR inurl:*/v2 OR inurl:*/v3)"
+    },
     "dork-wordpress": {
         "description": "WordPress Files",
         "query": "site:example.com inurl:wp-content OR site:example.com inurl:wp-includes"
+    },
+    "dork-googlesite": {
+        "description": "Google Sites",
+        "query": "site:sites.google.com \"example.com\""
     },
     "dork-filetype": {
         "description": "Juicy Extensions",
@@ -25,7 +33,7 @@
     },
     "dork-cloud-amazon": {
         "description": "Cloud Storage (Amazon)",
-        "query": "example.com site:s3.amazonaws.com OR example.com site:s3-external-1.amazonaws.com OR example.com site:s3.dualstack.us-east-1.amazonaws.com"
+        "query": "example.com site:s3.amazonaws.com OR example.com site:*.s3.amazonaws.com OR example.com site:s3-external-1.amazonaws.com OR example.com site:s3.dualstack.us-east-1.amazonaws.com"
     },
     "dork-cloud-microsoft": {
         "description": "Cloud Storage (Microsoft)",

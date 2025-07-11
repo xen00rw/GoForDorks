@@ -5,15 +5,23 @@
     },
     "dork-login": {
         "description": "Login Pages",
-        "query": "site:example.com inurl:admin OR inurl:login OR inurl:adminlogin OR inurl:cplogin OR inurl:weblogin  OR inurl:wp-admin OR inurl:wp-login OR inurl:portal  OR inurl:loginpanel OR inurl:memberlogin  OR inurl:dashboard OR inurl:auth OR inurl:ForgotPassword OR inurl:.git OR inurl:signup"
+        "query": "site:example.com inurl:admin OR inurl:login OR inurl:adminlogin OR inurl:cplogin OR inurl:weblogin OR inurl:wp-admin OR inurl:wp-login OR inurl:portal OR inurl:loginpanel OR inurl:memberlogin OR inurl:dashboard OR inurl:auth OR inurl:ForgotPassword OR inurl:.git OR inurl:signup"
     },
     "dork-registration": {
         "description": "Signup Pages",
         "query": "site:example.com intext:\"signup\" OR intext:\"Create Account\" OR intext:\"Create an account\" OR intext:\"Criar conta\" OR intext:\"cadastrar conta\""
     },
+    "dork-apis": {
+        "description": "API Urls",
+        "query": "site:example.com inurl:api | site:*/rest | site:*/v1 | site:*/v2 | site:*/v3"
+    },
     "dork-wordpress": {
         "description": "WordPress Files",
         "query": "site:example.com inurl:wp-content | inurl:wp-includes"
+    },
+    "dork-googlesite": {
+        "description": "Google Sites",
+        "query": "site:sites.google.com \"example.com\""
     },
     "dork-filetype": {
         "description": "Juicy Extensions",
@@ -53,11 +61,15 @@
     },
     "dork-infoleakage": {
         "description": "Code/Information Leaks",
-        "query": "\"example.com\" site:pastebin.com OR site:jsfiddle.net OR site:codebeautify.org OR site:codepen.io OR site:jfrog.io OR site:sharecode.io OR site:codeshare.io OR site:trello.com OR site:coggle.it OR site:libraries.io OR site:npm.runkit.com OR site:scribd.com OR site:stackoverflow.com OR site:justpaste.it OR site:heypasteit.com OR site:controlc.com OR site:codepad.co OR site:ideone.com OR site:repl.it OR site:jsdelivr.com"
+        "query": "\"example.com\" site:jsfiddle.net OR site:codebeautify.org OR site:codepen.io OR site:bitpaste.app OR site:jfrog.io OR site:sharecode.io OR site:codeshare.io OR site:trello.com OR site:coggle.it OR site:libraries.io OR site:npm.runkit.com OR site:scribd.com OR site:stackoverflow.com OR site:controlc.com OR site:codepad.co OR site:dotnetfiddle.net OR site:codepad.org OR site:ideone.com OR site:repl.it OR site:jsdelivr.com"
+    },
+    "dorks-pastes": {
+        "description": "Pastes",
+        "query": "\"example.com\" site:pastebin.com OR site:justpaste.it OR site:heypasteit.com OR site:bitpaste.app OR site:dpaste.com OR site:dpaste.org OR site:gitter.im OR site:hastebin.com"
     },
     "dork-cloud-amazon": {
         "description": "Cloud Storage (Amazon)",
-        "query": "\"example.com\" site:s3.amazonaws.com OR site:s3-external-1.amazonaws.com OR site:s3.dualstack.us-east-1.amazonaws.com"
+        "query": "\"example.com\" site:s3.amazonaws.com OR site:s3-external-1.amazonaws.com OR site:*.amazonaws.com OR site:s3.dualstack.us-east-1.amazonaws.com"
     },
     "dork-cloud-microsoft": {
         "description": "Cloud Storage (Microsoft)",

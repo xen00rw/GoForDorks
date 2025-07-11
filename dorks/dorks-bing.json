@@ -7,6 +7,14 @@
         "description": "Signup Pages",
         "query": "site:example.com (inbody:signup OR inbody:\"Create Account\" OR inbody:\"Create an account\" OR inbody:\"Criar conta\" OR inbody:\"cadastrar conta\")"
     },
+    "dork-apis": {
+        "description": "API Urls",
+        "query": "site:example.com (site:*/rest OR site:*/v1 OR site:*/v2 OR site:*/v3)"
+    },
+    "dork-googlesite": {
+        "description": "Google Sites",
+        "query": "site:sites.google.com \"example.com\""
+    },
     "dork-filetype": {
         "description": "By File Types",
         "query": "site:example.com (filetype:log OR filetype:csv OR filetype:ppt OR filetype:xlsx OR filetype:xls OR filetype:pptx OR filetype:txt OR filetype:docx OR filetype:doc OR filetype:cfg OR filetype:xml OR filetype:env OR filetype:sh OR filetype:bak OR filetype:backup OR filetype:old OR filetype:git OR filetype:svn)"
